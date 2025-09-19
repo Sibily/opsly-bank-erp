@@ -997,6 +997,10 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
+      assign_user_to_company: {
+        Args: { company_id_param: number }
+        Returns: boolean
+      }
       get_user_company_id: {
         Args: Record<PropertyKey, never>
         Returns: number
@@ -1004,6 +1008,10 @@ export type Database = {
       get_user_role: {
         Args: Record<PropertyKey, never>
         Returns: number
+      }
+      is_company_admin: {
+        Args: Record<PropertyKey, never>
+        Returns: boolean
       }
     }
     Enums: {
