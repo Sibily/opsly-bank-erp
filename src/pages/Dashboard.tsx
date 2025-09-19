@@ -3,10 +3,11 @@ import { Building2, Menu, Bell, Search, User, BarChart3, DollarSign, Package, Us
 import { BankingButton } from "@/components/ui/banking-button";
 import { BankingCard, BankingCardContent, BankingCardDescription, BankingCardHeader, BankingCardTitle } from "@/components/ui/banking-card";
 import { Input } from "@/components/ui/input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const navigate = useNavigate();
 
   const stats = [
     {
@@ -104,19 +105,35 @@ const Dashboard = () => {
                     <BarChart3 className="mr-3 h-4 w-4" />
                     Dashboard
                   </BankingButton>
-                  <BankingButton variant="ghost" className="w-full justify-start">
+                  <BankingButton 
+                    variant="ghost" 
+                    className="w-full justify-start"
+                    onClick={() => navigate('/financial')}
+                  >
                     <DollarSign className="mr-3 h-4 w-4" />
                     Financial
                   </BankingButton>
-                  <BankingButton variant="ghost" className="w-full justify-start">
+                  <BankingButton 
+                    variant="ghost" 
+                    className="w-full justify-start"
+                    onClick={() => navigate('/sales')}
+                  >
                     <TrendingUp className="mr-3 h-4 w-4" />
                     Sales
                   </BankingButton>
-                  <BankingButton variant="ghost" className="w-full justify-start">
+                  <BankingButton 
+                    variant="ghost" 
+                    className="w-full justify-start"
+                    onClick={() => navigate('/inventory')}
+                  >
                     <Package className="mr-3 h-4 w-4" />
                     Inventory
                   </BankingButton>
-                  <BankingButton variant="ghost" className="w-full justify-start">
+                  <BankingButton 
+                    variant="ghost" 
+                    className="w-full justify-start"
+                    onClick={() => navigate('/customers')}
+                  >
                     <Users className="mr-3 h-4 w-4" />
                     Customers
                   </BankingButton>
@@ -193,19 +210,35 @@ const Dashboard = () => {
               </BankingCardHeader>
               <BankingCardContent>
                 <div className="grid grid-cols-2 gap-4">
-                  <BankingButton variant="banking" className="h-20 flex-col">
+                  <BankingButton 
+                    variant="banking" 
+                    className="h-20 flex-col"
+                    onClick={() => navigate('/new-invoice')}
+                  >
                     <DollarSign className="h-6 w-6 mb-2" />
                     New Invoice
                   </BankingButton>
-                  <BankingButton variant="outline" className="h-20 flex-col">
+                  <BankingButton 
+                    variant="outline" 
+                    className="h-20 flex-col"
+                    onClick={() => navigate('/add-customer')}
+                  >
                     <Users className="h-6 w-6 mb-2" />
                     Add Customer
                   </BankingButton>
-                  <BankingButton variant="outline" className="h-20 flex-col">
+                  <BankingButton 
+                    variant="outline" 
+                    className="h-20 flex-col"
+                    onClick={() => navigate('/update-stock')}
+                  >
                     <Package className="h-6 w-6 mb-2" />
                     Update Stock
                   </BankingButton>
-                  <BankingButton variant="outline" className="h-20 flex-col">
+                  <BankingButton 
+                    variant="outline" 
+                    className="h-20 flex-col"
+                    onClick={() => navigate('/reports')}
+                  >
                     <BarChart3 className="h-6 w-6 mb-2" />
                     View Reports
                   </BankingButton>
